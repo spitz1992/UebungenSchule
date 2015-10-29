@@ -22,6 +22,7 @@ public class WeiterfuehrendeArrays {
 	static String sUserEingabe;
 	
 	public static void main(String[] args) {
+
 		if (!einlesen ()) {
 		schnittstellen.put("USB 1.0", "12 MBit/s");
 		schnittstellen.put("USB 2.0", "480 MBit/s");
@@ -65,15 +66,15 @@ public class WeiterfuehrendeArrays {
 			
 		// Liste aller Schnittstellen anzeigen
 		case "L":
-			String msg = null;
+
+			String a = "";
 			for (Entry entry : schnittstellen.entrySet()) {
 				//JOptionPane.showMessageDialog(null, entry.getKey() + " " + entry.getValue()); 
 				//System.out.println((entry.getKey() + " " + entry.getValue()));
-				msg = entry.getKey() + " = " + entry.getValue();
-				msg.join("\n", msg);
-				
+				a = a+entry.getKey() + " = " + entry.getValue() + "\n";
+		
 			}
-			JOptionPane.showMessageDialog(null, msg); 
+			JOptionPane.showMessageDialog(null, a); 
 			sUserEingabe = JOptionPane.showInputDialog("Wollen Sie eine weitere Abfrage durchführen? (J/N)");
 			if (sUserEingabe.equalsIgnoreCase("j"))
 				abfrage();
@@ -151,7 +152,7 @@ public class WeiterfuehrendeArrays {
 		FileOutputStream filewriter = null;
 
 		try {
-			filewriter = new FileOutputStream("C:/Users/jwolf/Documents/test.txt");
+			filewriter = new FileOutputStream("C:/Users/" + System.getenv("USERNAME") + "/Documents/test.txt");
 			outputwriter = new OutputStreamWriter(filewriter);
 			writer = new BufferedWriter(outputwriter);
 
@@ -183,7 +184,7 @@ public class WeiterfuehrendeArrays {
 		//BufferedReader bureader = null;
 		
 		try {
-			File f = new File("C:/Users/jwolf/Documents/test.txt");
+			File f = new File("C:/Users/" + System.getenv("USERNAME") + "/Documents/test.txt");
 			Scanner sc = new Scanner(f);
 			
 			while(sc.hasNextLine()){
