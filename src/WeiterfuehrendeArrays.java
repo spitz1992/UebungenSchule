@@ -50,6 +50,7 @@ public class WeiterfuehrendeArrays {
 		boolean b = true;
 		while (b) {
 		switch (sUserEingabe.toUpperCase()) {
+		
 		// Bandbreite abfragen
 		case "A":
 			
@@ -88,6 +89,7 @@ public class WeiterfuehrendeArrays {
 			 * + entry.getValue());
 			 */
 			break;
+			
 		// Neue Schnittstelle hinzufügen
 		case "N":
 			String bezeichnung = JOptionPane
@@ -108,6 +110,7 @@ public class WeiterfuehrendeArrays {
 			else
 				b = false;
 			break;
+			
 		// Schnittstelle aus Liste entfernen
 		case "E":
 			bezeichnung = JOptionPane
@@ -192,6 +195,7 @@ public class WeiterfuehrendeArrays {
                 String[] zeile = line.split("=");
                 schnittstellen.put(zeile[0],zeile[1]);
             }
+			//Einlesen über BufferedReader --> Habe ich nicht hinbekommen, er hat immer nur den Speichercode (Adresse) ausgegeben.
 			/*
 			String a = bureader.readLine();
 			String [] zeile = a.split("=");
